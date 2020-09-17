@@ -6,14 +6,14 @@ import PropTypes from 'prop-types';
 const Link = ({ active, children, onClick }) => {
     if (active) {
         return (
-            <b className="filetr active">
+            <div className="filter selected">
                 {children}
-            </b>
+            </div>
         )
     } else {
         return (
-            <a
-                href="#"
+            <div
+                // href="#"
                 className="filter not-selected"
                 onClick={
                     (ev) => {
@@ -23,7 +23,7 @@ const Link = ({ active, children, onClick }) => {
                 }
             >
                 {children}
-            </a>
+            </div>
         );
     }
 }

@@ -8,7 +8,7 @@ import { toggleTodo, removeTodo } from '../actions';
 // 无状态组件 根据传入的todos数组 创建动态数量的元素
 const TodoList = ({ todos, onToggleTodo, onRemoveTodo }) => {
     return (
-        <ul className="todo-list">
+        <div className="todo-list">
             {
                 todos.map((item) => (
                     <TodoItem
@@ -20,7 +20,7 @@ const TodoList = ({ todos, onToggleTodo, onRemoveTodo }) => {
                     />
                 ))
             }
-        </ul>
+        </div>
     )
 }
 

@@ -1,80 +1,124 @@
-.todos {
-    width: 500px;
-    font-size: 30px;
-  }
-  
   .add-todo {
+    margin-bottom: 16px;
+  }
+  
+  /* 新增待办事项组件wrapper */
+  .add-todo form {
     position: relative;
+    display: flex;
+    align-items: center;
   }
   
+  /* 待办事项输入框input */
   .add-todo .new-todo {
-    display: block;
-    margin: 0 0 0 50px;
-    font-size: 30px;
-    -webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-    font-smoothing: antialiased;
+    padding: 16px 52px 16px 18px;
+    border-radius: 48px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    font-size: 16px;
+    color: #626262;
   }
   
+  /* 添加按钮 */
   .add-todo .add-btn {
     font-size: 30px;
+    font-weight: bolder;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: linear-gradient(#c0a5f3, #7f95f7);
+    border: none;
+    color: white;
     position: absolute;
-    top: 0;
-    right: 0;
+    right: 0px;
+
+    cursor: pointer;
+    outline: none;
   }
   
+  /* 待办事项列表样式 */
   .todo-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  
-    font-size: 30px;
+    display: grid;
+    row-gap: 14px;
+    width: 100%;
   }
   
-  
+  /* 待办事项 */
   .todo-item {
-    position: relative;
-    height: 60px;
-    line-height: 50px;
-    vertical-align: middle;
+    background: white;
+    padding: 16px;
+    border-radius: 8px;
+    color: #626262;
+    list-style-type: none;
+    margin-bottom: 16px;
   }
   
-  /* .todo-item .toggle {
-    height: 40px;
-    -webkit-appearance: none;
-    appearance: none;
+  /* item的文字样式 */
+  .todo-item .text {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .todo-item label {
+    display: flex;
+    position: relative;
+    align-items: center;
+    /* cursor: pointer; */
+  }
+
+  
+  /* 为toogle添加样式 */
+  .todo-item .toggle {
+    margin-right: 16px;
+    opacity: 0;
+ }
+
+ .todo-item label span.toggle-circle {
     position: absolute;
     top: 0;
-    bottom: 0;
-  } */
-  
-  /* .todo-item .toggle:after {
-    margin: 10px 0 0 0;
-    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
-  }
-  
-  .todo-item .toggle:checked:after {
-    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
-  } */
-  
-  .todo-item .text {
-    margin: 0 0 0 50px;
-    height: 40px;
-  }
-  
+ }
+
+ .todo-item label span.toggle-circle::before,
+ .todo-item label span.toggle-circle::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+ }
+
+ .todo-item label span.toggle-circle::before {
+    border: 1px solid #b382f9;
+ }
+
+ .todo-item label span.toggle-circle::after {
+    transition: .4s;
+    background: #b382f9;
+    transform: translate(1px, 1px) scale(.8);
+    opacity: 0;
+ }
+
+ .todo-item .toggle:checked + span.toggle-circle::after {
+    opacity: 1;
+ }
+
+  /* 删除按钮 */
   .todo-item .remove {
+    outline: none;
     border: 0;
     background: 0;
-    display: none;
+    display: none;  /* 隐藏 */
     position: absolute;
-    top: 0;
-    right: 10px;
-    bottom: 0;
-    width: 40px;
-    height: 40px;
-    font-size: 30px;
-    color: #cc9a9a;
-    margin-bottom: 11px;
+    right: 2px;
+    
+    font-size: 16px;
+    color: #626262;
+
     transition: color 0.2s ease-out;
     -webkit-appearance: none;
     appearance: none;
@@ -85,7 +129,7 @@
   }
   
   .todo-item .remove:hover {
-    color: #af5b5e;
+    color: #b382f9;
   }
   
   

@@ -1,25 +1,28 @@
 .filters {
-    font-size: 20px;
+    display: flex;
+    margin: 24px 2px;
+    color: #c0c2ce;
+    font-size: 14px;
+    cursor: pointer;
+    justify-content: center;
   }
   
   .filters .filter {
-    margin: 3px;
-    padding: 3px 7px;
-    text-decoration: none;
-    border: 1px solid transparent;
-    border-radius: 3px;
+    margin-right: 14px;
+    transition: .8s;
+    
   }
   
-  .filters .selected {
-    border: 1px solid transparent;
-    text-decoration: none;
+  .filters .filter.selected {
+    margin-right: 14px;
+    transform: scale(1.2);
+    font-weight: bolder;
+    color: #6b729c;
   }
   
   .filters .not-selected {
-    color: black;
-    text-decoration: none;
-    border: 1px solid;
-    border-color: rgba(175, 47, 47, 0.2);
+    margin-right: 14px;
+
   }
   
   .filters .not-selected:hover {
